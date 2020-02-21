@@ -130,7 +130,10 @@ log.print("Test", logLevel: .success) // prints: ✅ Test
 
 ## Installing
 ### Swift Package Manager (Recommended)
-
+Add the following dependency to your `Package.swift` file:
+```
+.package(url: "https://github.com/fgeistert/GroupedLogger.git", from: "2.0")
+```
 
 ### Cartage
 Add the following line to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile).
