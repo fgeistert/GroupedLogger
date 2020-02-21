@@ -70,6 +70,7 @@ public class GroupedLogger {
         return Settings(useTimestamp: .no, useEmoji: .yes)
     }()
     
+    /// set your new `Settings` to the shared GroupedLogger instance
     public func setSettings(to settings: Settings) {
         _settings = settings
     }
@@ -80,44 +81,54 @@ public class GroupedLogger {
     
     // MARK: - Direct Functions
     
+    /// print a `String``to the console using the `.debug` `LogLevel` and an optional `Group`
     public func debug(_ string: String, group: Group? = nil) {
         groupedPrint(content: string, logLevel: .debug, group: group)
     }
     
+    /// print a `String``to the console using the `.info` `LogLevel` and an optional `Group`
     public func info(_ string: String, group: Group? = nil) {
         groupedPrint(content: string, logLevel: .info, group: group)
     }
     
+    /// print a `String``to the console using the `.notice` `LogLevel` and an optional `Group`
     public func notice(_ string: String, group: Group? = nil) {
         groupedPrint(content: string, logLevel: .notice, group: group)
     }
     
+    /// print a `String``to the console using the `.warning` `LogLevel` and an optional `Group`
     public func warning(_ string: String, group: Group? = nil) {
         groupedPrint(content: string, logLevel: .warning, group: group)
     }
     
+    /// print a `String``to the console using the `.error` `LogLevel` and an optional `Group`
     public func error(_ string: String, group: Group? = nil) {
         groupedPrint(content: string, logLevel: .error, group: group)
     }
     
+    /// print a `String``to the console using the `.critical` `LogLevel` and an optional `Group`
     public func critical(_ string: String, group: Group? = nil) {
         groupedPrint(content: string, logLevel: .critical, group: group)
     }
     
+    /// print a `String``to the console using the `.alert` `LogLevel` and an optional `Group`
     public func alert(_ string: String, group: Group? = nil) {
         groupedPrint(content: string, logLevel: .alert, group: group)
     }
     
+    /// print a `String``to the console using the `.emergency` `LogLevel` and an optional `Group`
     public func emergency(_ string: String, group: Group? = nil) {
         groupedPrint(content: string, logLevel: .emergency, group: group)
     }
     
+    /// print a `String``to the console using the `.success` `LogLevel` and an optional `Group`
     public func success(_ string: String, group: Group? = nil) {
         groupedPrint(content: string, logLevel: .success, group: group)
     }
     
     // MARK: - Print Functions
     
+    /// print a `String` to the console with an optional `LogLevel` and a `Group`
     public func print(_ string: String, logLevel: LogLevel = .debug, group: Group? = nil) {
         groupedPrint(content: string, logLevel: logLevel, group: group)
     }
