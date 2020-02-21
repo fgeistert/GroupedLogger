@@ -30,30 +30,18 @@ public class GroupedLogger {
     
     // MARK: - Groups
     
-    public enum Group {
-        case system
-        case network
-        case api
-        case bluetooth
-        case coordinator
-        case custom(_ value: String)
+    public struct Group {
+        let name: String
         
-        var identifier: String {
-            switch self {
-            case .system:
-                return "System"
-            case .network:
-                return "Network"
-            case .api:
-                return "API"
-            case .bluetooth:
-                return "Bluetooth"
-            case .coordinator:
-                return "Coordinator"
-            case .custom(let string):
-                return string
-            }
+        public init(_ name: String) {
+            self.name = name
         }
+        
+        public static let system: Group = Group("System")
+        public static let network: Group = Group("Network")
+        public static let api: Group = Group("API")
+        public static let bluetooth: Group = Group("Bluetooth")
+        public static let coordinator: Group = Group("Coordinator")
     }
     
     // MARK: - Settings
@@ -172,12 +160,11 @@ public class GroupedLogger {
         }
         
         if let group = group {
-            printStatement += "[\(group.identifier)]"
+            printStatement += "[\(group.name)]"
         }
         
         printStatement += " \(content)"
         
         Swift.print(printStatement)
     }
-    
 }

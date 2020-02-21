@@ -13,7 +13,7 @@ import GroupedLogger
 let log = GroupedLogger.shared
 
 // custom logging groups
-struct MyLogGroups {
-    static let sync: String = "Sync"
-    static let moya: String = "Moya"
+extension GroupedLogger.Group {
+    static let sync = GroupedLogger.Group("Sync")
+    static let moya = GroupedLogger.Group("Moya")
 }

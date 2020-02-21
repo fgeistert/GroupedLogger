@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         log.print("Test3")
         log.print("Test3", group: .network)
         log.print("Test4", logLevel: .emergency, group: .coordinator)
-        log.print("Test4", logLevel: .success, group: .custom(MyLogGroups.sync))
+        log.print("Test4", logLevel: .success, group: .sync)
         
         // non emoji
         
