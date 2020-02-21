@@ -11,7 +11,7 @@ You are right by asking yourself this question. You do not *necessarily* need *a
 1. I always wanted to make my own framework, so this was a great opportunity.
 2. At work I recently worked on a huge project, that involved *a lot* of network calls. Additionally it connected to a lot of devices via bluetooth. Everything was printed to the console, which made using it impossible. Whenever I wanted to `print` something I had to use a prefix.
 
-And so I though: why not give every log a `Group` and make logs more organized.  
+And so I thought: why not give every log a `Group` and make logs more organized.  
 **Bonus**: with `Group`s, `LogLevel`s and `Time` you can now easily search/filter your logs, to find everything related to it.
 
 ## Usage
@@ -54,20 +54,20 @@ My favorite feature of this framework is the ability to add groups to your logs.
 
 For now `GroupedLogger` comes with 5 predefined groups. Feel free to suggest more.
 ```swift
-public enum Group {
-    case system
-    case network
-    case api
-    case bluetooth
-    case coordinator
+public struct Group {
+    public static let system: Group = Group("System")
+    public static let network: Group = Group("Network")
+    public static let api: Group = Group("API")
+    public static let bluetooth: Group = Group("Bluetooth")
+    public static let coordinator: Group = Group("Coordinator")
 }
 ```
-You can also add your custom `Group` by calling `.custom(String)`. It is recommended to save your custom `group identifiers` in a `struct` like this:
+You can also add your custom `Group` by extending `GroupedLogger.Group` like this:
 ```swift
 // custom logging groups
-struct MyLogGroups {
-    static let sync: String = "Sync"
-    static let moya: String = "Moya"
+extension GroupedLogger.Group {
+    static let sync = GroupedLogger.Group("Sync")
+    static let moya = GroupedLogger.Group("Moya")
 }
 ```
 Now you can just call it like this:
@@ -129,11 +129,14 @@ log.print("Test", logLevel: .success) // prints: ✅ Test
 ```
 
 ## Installing
+### Swift Package Manager (Recommended)
+
+
 ### Cartage
 Add the following line to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile).
 
 ```
-github "fgeistert/GroupedLogger" ~> 1.0
+github "fgeistert/GroupedLogger" ~> 2.0
 ```
 
 Then run `carthage update`.
@@ -141,7 +144,7 @@ Then run `carthage update`.
 Just drag and drop the `.swift` files from the `GroupedLogger` folder into your project.
 
 ## Version Compatibility
-GroupedLogger is built with Swift 5.0
+GroupedLogger is built with Swift 5
 
 ## Contributing
 - Open an issue
