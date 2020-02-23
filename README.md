@@ -1,5 +1,6 @@
 # GroupedLogger
-[![Swift 4](https://img.shields.io/badge/Language-Swift%204-orange.svg)](https://developer.apple.com/swift)
+[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg)]((https://developer.apple.com/swift))
+[![SPM Compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 A simple, lightweight and easy-to-use logging library to spice up your logs and make finding things easier.
@@ -132,14 +133,14 @@ log.print("Test", logLevel: .success) // prints: ✅ Test
 ### Swift Package Manager (Recommended)
 Add the following dependency to your `Package.swift` file:
 ```
-.package(url: "https://github.com/fgeistert/GroupedLogger.git", from: "2.0")
+.package(url: "https://github.com/fgeistert/GroupedLogger.git", from: "2.0.1")
 ```
 
 ### Cartage
 Add the following line to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile).
 
 ```
-github "fgeistert/GroupedLogger" ~> 2.0
+github "fgeistert/GroupedLogger" ~> 2.0.1
 ```
 
 Then run `carthage update`.
